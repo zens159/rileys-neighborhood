@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://di526cjn0cmg7" path="res://camera_2d.gd" id="6_xhwvo"]
 [ext_resource type="Script" uid="uid://dbkn3ml34ld1y" path="res://camera_helper.gd" id="7_iud04"]
 [ext_resource type="Script" uid="uid://dsxr6rba0dsyw" path="res://camera_area.gd" id="9_wj5yf"]
+[ext_resource type="Script" uid="uid://cw8011xqrqhnk" path="res://2d rooms/transition_area.gd" id="10_737v0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbew"]
 size = Vector2(960, 516)
@@ -16,7 +17,7 @@ size = Vector2(960, 516)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5t3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oq8qg"]
-size = Vector2(1193, 516)
+size = Vector2(1060, 516)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_737v0"]
 size = Vector2(960, 516)
@@ -32,6 +33,15 @@ tags = {
 "date": "2026"
 }
 loop = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxec3"]
+size = Vector2(264, 498)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgt33"]
+size = Vector2(1009, 508)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88281"]
+size = Vector2(135.70847, 515.388)
 
 [node name="2dRoomMaster" type="Node2D" unique_id=1637092776]
 script = ExtResource("1_0jw50")
@@ -55,7 +65,6 @@ script = ExtResource("6_xhwvo")
 
 [node name="CameraHelper" type="Node2D" parent="." unique_id=521620800]
 script = ExtResource("7_iud04")
-zoom = Vector2(1.25, 1.25)
 
 [node name="Camera Area" type="Area2D" parent="." unique_id=1952655284]
 position = Vector2(2088, 152)
@@ -73,9 +82,9 @@ position = Vector2(247, 108)
 shape = SubResource("RectangleShape2D_x5t3s")
 
 [node name="Camera Area2" type="Area2D" parent="." unique_id=889004567]
-position = Vector2(3052, 152)
+position = Vector2(3051, 152)
 script = ExtResource("9_wj5yf")
-zoom = Vector2(1.25, 1.25)
+zoom = Vector2(1.5, 1.5)
 camera_follow = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Area2" unique_id=1568973904]
@@ -107,9 +116,76 @@ shape = SubResource("RectangleShape2D_x5t3s")
 stream = SubResource("AudioStreamOggVorbis_oq8qg")
 autoplay = true
 
+[node name="Camera Area4" type="Area2D" parent="." unique_id=512193329]
+position = Vector2(5220, 145)
+script = ExtResource("9_wj5yf")
+zoom = Vector2(1.5, 1.5)
+camera_follow = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Area4" unique_id=1131564231]
+position = Vector2(296, 107)
+shape = SubResource("RectangleShape2D_oq8qg")
+
+[node name="CameraPoint" type="Area2D" parent="Camera Area4" unique_id=317429413 groups=["camera point"]]
+position = Vector2(247, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Area4/CameraPoint" unique_id=939999497]
+shape = SubResource("RectangleShape2D_x5t3s")
+
+[node name="Transition Area" type="Area2D" parent="." unique_id=260884939]
+position = Vector2(7003, 264)
+script = ExtResource("10_737v0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition Area" unique_id=221697859]
+position = Vector2(195, -6)
+shape = SubResource("RectangleShape2D_rxec3")
+
+[node name="Camera Area5" type="Area2D" parent="." unique_id=827731340]
+position = Vector2(5220, 145)
+script = ExtResource("9_wj5yf")
+zoom = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Area5" unique_id=930967167]
+position = Vector2(1332.5, 112)
+shape = SubResource("RectangleShape2D_fgt33")
+
+[node name="CameraPoint" type="Area2D" parent="Camera Area5" unique_id=892124628 groups=["camera point"]]
+position = Vector2(1332, 114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Area5/CameraPoint" unique_id=144517591]
+shape = SubResource("RectangleShape2D_x5t3s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1831734063]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=692535059]
+visible = false
+offset_right = 1154.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=2131622989]
+visible = false
+offset_left = -26.0
+offset_top = -6.0
+offset_right = 1154.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1822491908]
+position = Vector2(-477.70847, 145.22397)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=967012461]
+position = Vector2(425.70847, 108.77603)
+shape = SubResource("RectangleShape2D_88281")
+
 [connection signal="body_entered" from="Camera Area" to="Camera Area" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera Area" to="Camera Area" method="_on_body_exited"]
 [connection signal="body_entered" from="Camera Area2" to="Camera Area2" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera Area2" to="Camera Area2" method="_on_body_exited"]
 [connection signal="body_entered" from="Camera Area3" to="Camera Area3" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera Area3" to="Camera Area3" method="_on_body_exited"]
+[connection signal="body_entered" from="Camera Area4" to="Camera Area4" method="_on_body_entered"]
+[connection signal="body_exited" from="Camera Area4" to="Camera Area4" method="_on_body_exited"]
+[connection signal="body_entered" from="Transition Area" to="Transition Area" method="_on_body_entered"]
+[connection signal="body_entered" from="Camera Area5" to="Camera Area5" method="_on_body_entered"]
+[connection signal="body_exited" from="Camera Area5" to="Camera Area5" method="_on_body_exited"]

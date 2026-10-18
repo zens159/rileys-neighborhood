@@ -16,8 +16,8 @@ var float_stasis = false
 
 
 var gravity = 650.0
-const JUMP_VELOCITY = -450.0
-const RUN_SPEED = 250.0
+const JUMP_VELOCITY = -800.0 #-450.0
+const RUN_SPEED = 650.0 #250.0
 const GROUND_ACCELERATION = 600.0
 const GROUND_FRICTION = 400.0
 
@@ -95,7 +95,7 @@ func _change_state(new_state: State) -> void:
 	#	print("sliding")
 	
 	if new_state == State.RUN:
-		print("yowsa")
+		#print("yowsa")
 		sprite.play("run")
 	
 	if new_state == State.FLOAT:
@@ -158,7 +158,7 @@ func _handle_air_state(delta: float) -> void:
 			_change_state(State.WALLSLIDE)
 		if velocity.y > 0:
 			gravity = 400
-	elif velocity.y > 0 and current_state == State.JUMP:
+	elif velocity.y > 0 and (current_state == State.JUMP or current_state == State.RUN):
 		_change_state(State.FALL)
 	elif velocity.y < 0:
 		_change_state(State.JUMP)

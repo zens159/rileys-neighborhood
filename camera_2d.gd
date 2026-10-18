@@ -21,6 +21,7 @@ func process_shake(delta: float):
 func _physics_process(delta: float) -> void:
 	if GameManager.buddy:
 		global_position = lerp(global_position, GameManager.buddy.global_position, follow_speed * delta)
+		global_position.x = max(390, global_position.x)
 		zoom = lerp(zoom, GameManager.buddy.zoom, zoom_speed * delta)
 		
 	process_shake(delta)
