@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://bfn8hqjnhsyp7"]
 
-[ext_resource type="PackedScene" uid="uid://dxqn36rdl1opd" path="res://player.tscn" id="1_aouu8"]
 [ext_resource type="Texture2D" uid="uid://crfsimcvqfjsg" path="res://riley_concrete_autotile.png" id="2_6ofxv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejii2"]
@@ -123,9 +122,6 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ejii2")
 
 [node name="2D Room 1" type="Node2D" unique_id=1447903900]
-
-[node name="Player" parent="." unique_id=154990911 instance=ExtResource("1_aouu8")]
-position = Vector2(215, 481)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1640566973]
 texture_filter = 1

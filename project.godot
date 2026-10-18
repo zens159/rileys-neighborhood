@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2D to 3D Game"
-run/main_scene="uid://hre25ngn0rvb"
+run/main_scene="uid://cijm3fpqxdns0"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

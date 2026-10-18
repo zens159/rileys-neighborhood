@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var zoom = Vector2(2, 2)
+@export var zoom = Vector2(1.5, 1.5)
 @export var follow_player : bool = true
 
 func _process(_delta: float) -> void:
