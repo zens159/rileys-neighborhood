@@ -13,13 +13,22 @@ sky_material = SubResource("ProceduralSkyMaterial_netps")
 background_mode = 2
 sky = SubResource("Sky_e3syd")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rn7tw"]
+size = Vector3(2.7, 4.7000003, 131.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_netps"]
+size = Vector3(5.8, 4.7000003, 132)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e3syd"]
+size = Vector3(48.4, 6.4, 0.90000004)
+
 [node name="3dRoomTest" type="Node3D" unique_id=1697210721]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=949747695]
 environment = SubResource("Environment_1grxq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=941218054]
-transform = Transform3D(-0.33216113, -0.7981485, 0.502621, 0, 0.5328763, 0.84619313, -0.94322264, 0.28107247, -0.17700079, 0, 0, 0)
+transform = Transform3D(-0.98072326, -0.19024771, 0.04458165, 0.193033, -0.907868, 0.37217447, -0.03033103, 0.37360582, 0.9270915, -0.4, -0.19999999, -2.7)
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2009026109]
@@ -33,9 +42,9 @@ operation = 2
 height = 1.2
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1093978954]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049999714, -0.3, 0)
 use_collision = true
-size = Vector3(10.7, 0.4, 14.900001)
+size = Vector3(10.6, 0.4, 14.900001)
 
 [node name="ProtoController" parent="." unique_id=1774580177 instance=ExtResource("1_netps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.924386)
@@ -44,3 +53,46 @@ input_right = "right"
 input_forward = "up"
 input_back = "down"
 input_jump = "jump"
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1156862546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 3.187854, -6.4667935, -71.57665)
+use_collision = true
+size = Vector3(43.100002, 0.3, 129.7)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=461631093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8999996, -3.1999996, -0.0499997)
+use_collision = true
+size = Vector3(1, 15.2, 14.900001)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1446533218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -2.6499996, -0.049999714)
+use_collision = true
+size = Vector3(1, 13.5, 14.900001)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=960356039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34999967, 2.1, 7.350002)
+use_collision = true
+size = Vector3(9.900001, 5.2000003, 0.7)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1977952378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049999356, -3.5, -7.1999984)
+use_collision = true
+size = Vector3(10.7, 6.6, 0.6)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=520148518]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1917248851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.55, -4.1000004, -70.24999)
+shape = SubResource("BoxShape3D_rn7tw")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1299566512]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=169374520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.399998, -4.1000004, -72.5)
+shape = SubResource("BoxShape3D_netps")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=550374285]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=1283975085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0999956, -4.0000005, -6.6499944)
+shape = SubResource("BoxShape3D_e3syd")

@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bsjlmi3vdgkjm"]
+[gd_scene format=4 uid="uid://c6kcd3sglj3x8"]
 
 [ext_resource type="Texture2D" uid="uid://crfsimcvqfjsg" path="res://riley_concrete_autotile.png" id="2_f42wc"]
 
@@ -121,7 +121,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_ejii2")
 
-[node name="2D Room 1" type="Node2D" unique_id=1447903900]
+[node name="2D Room 2" type="Node2D" unique_id=1447903900]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1640566973]
 texture_filter = 1
