@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-enum State { IDLE, RUN, JUMP, FALL, WALLSLIDE }
+enum State { IDLE, RUN, JUMP, FALL, WALLSLIDE, FLOAT }
 
 @onready var jump_buffer_timer: Timer = $JumpBufferTimer
 @onready var coyote_timer: Timer = $CoyoteTimer
@@ -11,8 +11,10 @@ var save_scale : Vector2
 var save_facing_right = true # for wall jumps
 var control_stasis = false
 
+var float_stasis = false
 
-const GRAVITY = 650.0
+
+var gravity = 650.0
 const JUMP_VELOCITY = -450.0
 const RUN_SPEED = 250.0
 const GROUND_ACCELERATION = 800.0
@@ -87,11 +89,14 @@ func _change_state(new_state: State) -> void:
 	var old_state = current_state
 	current_state = new_state
 	
-	if new_state == State.WALLSLIDE:
-		print("sliding")
+	#if new_state == State.WALLSLIDE:
+	#	print("sliding")
+	
+	if new_state == State.FLOAT:
+		velocity.y = 1
 	
 	# Coyote Time
-	if old_state != State.JUMP and new_state == State.FALL:
+	if (old_state != State.JUMP and old_state != State.FLOAT) and new_state == State.FALL:
 		coyote_timer.start()
 	
 	# Coyote Time
@@ -112,10 +117,15 @@ func _handle_air_state(delta: float) -> void:
 		if Input.is_action_just_released("jump") and velocity.y < 0:
 			velocity.y /= 2
 		#sprite.play("jump")
-	#elif current_state == State.FALL:
+	elif current_state == State.FALL:
+		if Input.is_action_pressed("jump") and not float_stasis:
+			_change_state(State.FLOAT)
 		#sprite.play("fall")
-	#elif current_state == State.LEDGEDASH:
-		#sprite.play("dash")
+	elif current_state == State.FLOAT:
+		gravity = 75
+		if Input.is_action_just_released("jump"):
+			_set_float_stasis(0.5)
+			_change_state(State.FALL)
 	
 	var direction = Input.get_axis("left", "right")
 	
@@ -176,3 +186,8 @@ func _set_control_stasis(stasis_time: float) -> void:
 	control_stasis = true
 	await get_tree().create_timer(stasis_time).timeout
 	control_stasis = false
+
+func _set_float_stasis(stasis_time: float) -> void:
+	float_stasis = true
+	await get_tree().create_timer(stasis_time).timeout
+	float_stasis = false
