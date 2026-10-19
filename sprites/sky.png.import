@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bce0gepgrvm0j"
-path="res://.godot/imported/riley_grass_autotile.png-f0735a9b984cf4a8a11c20d1710a4dc5.ctex"
+uid="uid://bv2hpl6f3wsk7"
+path="res://.godot/imported/sky.png-8fa0f55909e672d3ba612a05ac524628.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://riley_grass_autotile.png"
-dest_files=["res://.godot/imported/riley_grass_autotile.png-f0735a9b984cf4a8a11c20d1710a4dc5.ctex"]
+source_file="res://sprites/sky.png"
+dest_files=["res://.godot/imported/sky.png-8fa0f55909e672d3ba612a05ac524628.ctex"]
 
 [params]
 

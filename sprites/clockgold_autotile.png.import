@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crfsimcvqfjsg"
-path="res://.godot/imported/riley_concrete_autotile.png-66268ade1ec5e6a21a9e07a37e32bbb1.ctex"
+uid="uid://pici5gg81o5t"
+path="res://.godot/imported/clockgold_autotile.png-9497cebe42215fbcaf535434389c9118.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://riley_concrete_autotile.png"
-dest_files=["res://.godot/imported/riley_concrete_autotile.png-66268ade1ec5e6a21a9e07a37e32bbb1.ctex"]
+source_file="res://sprites/clockgold_autotile.png"
+dest_files=["res://.godot/imported/clockgold_autotile.png-9497cebe42215fbcaf535434389c9118.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cijm3fpqxdns0"]
 
 [ext_resource type="Script" uid="uid://cajaotqrnivf4" path="res://room_spawn.gd" id="1_0jw50"]
-[ext_resource type="PackedScene" uid="uid://bsjlmi3vdgkjm" path="res://2d rooms/2d_room_1.tscn" id="1_l2ijm"]
+[ext_resource type="PackedScene" uid="uid://c6kcd3sglj3x8" path="res://2d rooms/2d_room_1.tscn" id="1_l2ijm"]
 [ext_resource type="PackedScene" uid="uid://g6f40ost1x5u" path="res://2d rooms/2d_room_2.tscn" id="2_0jw50"]
 [ext_resource type="PackedScene" uid="uid://bfn8hqjnhsyp7" path="res://2d rooms/2d_room_3.tscn" id="3_wj5yf"]
 [ext_resource type="PackedScene" uid="uid://dbklm6gkddmv4" path="res://2d rooms/2d_room_4.tscn" id="4_ounqj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dbkn3ml34ld1y" path="res://camera_helper.gd" id="7_iud04"]
 [ext_resource type="Script" uid="uid://dsxr6rba0dsyw" path="res://camera_area.gd" id="9_wj5yf"]
 [ext_resource type="Script" uid="uid://cw8011xqrqhnk" path="res://2d rooms/transition_area.gd" id="10_737v0"]
+[ext_resource type="PackedScene" uid="uid://ia2wtk6a5a2b" path="res://2d rooms/sky.tscn" id="12_7sfqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbew"]
 size = Vector2(960, 516)
@@ -177,6 +178,8 @@ position = Vector2(-477.70847, 145.22397)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=967012461]
 position = Vector2(425.70847, 108.77603)
 shape = SubResource("RectangleShape2D_88281")
+
+[node name="Sky" parent="." unique_id=1660758191 instance=ExtResource("12_7sfqm")]
 
 [connection signal="body_entered" from="Camera Area" to="Camera Area" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera Area" to="Camera Area" method="_on_body_exited"]
