@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dsxr6rba0dsyw" path="res://camera_area.gd" id="9_wj5yf"]
 [ext_resource type="Script" uid="uid://cw8011xqrqhnk" path="res://2d rooms/transition_area.gd" id="10_737v0"]
 [ext_resource type="PackedScene" uid="uid://bfq8a35wyybo0" path="res://npc.tscn" id="11_fgt33"]
+[ext_resource type="PackedScene" uid="uid://ia2wtk6a5a2b" path="res://2d rooms/sky.tscn" id="12_7sfqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbew"]
 size = Vector2(960, 516)
@@ -65,7 +66,7 @@ position = Vector2(3710, 3)
 position = Vector2(5567, 0)
 
 [node name="Player" parent="." unique_id=154990911 groups=["player"] instance=ExtResource("5_o5x30")]
-position = Vector2(220, 486)
+position = Vector2(216, 383)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1382599419]
 script = ExtResource("6_xhwvo")
@@ -185,6 +186,11 @@ position = Vector2(-477.70847, 145.22397)
 position = Vector2(425.70847, 108.77603)
 shape = SubResource("RectangleShape2D_88281")
 
+<<<<<<< Updated upstream
+=======
+[node name="Sky" parent="." unique_id=1660758191 instance=ExtResource("12_7sfqm")]
+
+>>>>>>> Stashed changes
 [node name="Cat" parent="." unique_id=1841374025 groups=["npc"] instance=ExtResource("11_fgt33")]
 position = Vector2(2451, 337)
 dialogue_title = "cat_get"
@@ -198,8 +204,12 @@ position = Vector2(437, 494)
 dialogue_title = "elliot_talk"
 
 [node name="Sprite2D" parent="NPC" index="0" unique_id=928814081]
+position = Vector2(-83, -110)
 texture = SubResource("CompressedTexture2D_fgt33")
 frame = 8
+
+[node name="CollisionShape2D" parent="NPC" index="1" unique_id=1904879201]
+position = Vector2(-84, -123)
 
 [node name="Camera Area6" type="Area2D" parent="." unique_id=453017999]
 position = Vector2(945, 152)
