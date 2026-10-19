@@ -479,6 +479,7 @@ shape = SubResource("RectangleShape2D_qnbew")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=674941680]
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1217584993]
+visible = false
 offset_left = -26.0
 offset_top = -6.0
 offset_right = 1154.0

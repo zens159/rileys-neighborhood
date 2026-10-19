@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cuys7s82p3ak5"
+path="res://.godot/imported/mark_talk.dialogue-b2057c54177011beca3a070c9a6270c8.tres"
+
+[deps]
+
+source_file="res://dialogue/mark_talk.dialogue"
+dest_files=["res://.godot/imported/mark_talk.dialogue-b2057c54177011beca3a070c9a6270c8.tres"]
+
+[params]
+
+defaults=true

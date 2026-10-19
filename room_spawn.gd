@@ -12,6 +12,9 @@ func _ready() -> void:
 	GameManager.camera = get_node("Camera2D")
 	GameManager.buddy = get_node("CameraHelper")
 	
+	if name == "2dRoomMaster":
+		DialogueManager.show_dialogue_balloon(preload("res://dialogue/room_start.dialogue"), "room_start")
+	
 	color_rect2.visible = true
 	var tween = create_tween()
 	tween.tween_property(color_rect2, "modulate:a", 0, 1).from(1)
