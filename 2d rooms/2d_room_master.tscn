@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dbkn3ml34ld1y" path="res://camera_helper.gd" id="7_iud04"]
 [ext_resource type="Script" uid="uid://dsxr6rba0dsyw" path="res://camera_area.gd" id="9_wj5yf"]
 [ext_resource type="Script" uid="uid://cw8011xqrqhnk" path="res://2d rooms/transition_area.gd" id="10_737v0"]
+[ext_resource type="PackedScene" uid="uid://bfq8a35wyybo0" path="res://npc.tscn" id="11_fgt33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbew"]
 size = Vector2(960, 516)
@@ -42,6 +43,12 @@ size = Vector2(1009, 508)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88281"]
 size = Vector2(135.70847, 515.388)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7sfqm"]
+load_path = "res://.godot/imported/npc_spritesheet.png-68dff7aa987c0e9faaad3ae8912b2cf5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fgt33"]
+load_path = "res://.godot/imported/npc_spritesheet.png-68dff7aa987c0e9faaad3ae8912b2cf5.ctex"
 
 [node name="2dRoomMaster" type="Node2D" unique_id=1637092776]
 script = ExtResource("1_0jw50")
@@ -178,6 +185,38 @@ position = Vector2(-477.70847, 145.22397)
 position = Vector2(425.70847, 108.77603)
 shape = SubResource("RectangleShape2D_88281")
 
+[node name="Cat" parent="." unique_id=1841374025 groups=["npc"] instance=ExtResource("11_fgt33")]
+position = Vector2(2451, 337)
+dialogue_title = "cat_get"
+
+[node name="Sprite2D" parent="Cat" index="0" unique_id=928814081]
+texture = SubResource("CompressedTexture2D_7sfqm")
+frame = 5
+
+[node name="NPC" parent="." unique_id=1213682304 groups=["npc"] instance=ExtResource("11_fgt33")]
+position = Vector2(437, 494)
+dialogue_title = "elliot_talk"
+
+[node name="Sprite2D" parent="NPC" index="0" unique_id=928814081]
+texture = SubResource("CompressedTexture2D_fgt33")
+frame = 8
+
+[node name="Camera Area6" type="Area2D" parent="." unique_id=453017999]
+position = Vector2(945, 152)
+script = ExtResource("9_wj5yf")
+zoom = Vector2(1.5, 1.5)
+camera_follow = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Area6" unique_id=1431570619]
+position = Vector2(362.5, 107)
+shape = SubResource("RectangleShape2D_oq8qg")
+
+[node name="CameraPoint" type="Area2D" parent="Camera Area6" unique_id=1871020211 groups=["camera point"]]
+position = Vector2(247, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera Area6/CameraPoint" unique_id=2083085230]
+shape = SubResource("RectangleShape2D_x5t3s")
+
 [connection signal="body_entered" from="Camera Area" to="Camera Area" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera Area" to="Camera Area" method="_on_body_exited"]
 [connection signal="body_entered" from="Camera Area2" to="Camera Area2" method="_on_body_entered"]
@@ -189,3 +228,10 @@ shape = SubResource("RectangleShape2D_88281")
 [connection signal="body_entered" from="Transition Area" to="Transition Area" method="_on_body_entered"]
 [connection signal="body_entered" from="Camera Area5" to="Camera Area5" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera Area5" to="Camera Area5" method="_on_body_exited"]
+[connection signal="body_exited" from="Cat" to="Cat" method="_on_body_exited"]
+[connection signal="body_exited" from="NPC" to="NPC" method="_on_body_exited"]
+[connection signal="body_entered" from="Camera Area6" to="Camera Area6" method="_on_body_entered"]
+[connection signal="body_exited" from="Camera Area6" to="Camera Area6" method="_on_body_exited"]
+
+[editable path="Cat"]
+[editable path="NPC"]

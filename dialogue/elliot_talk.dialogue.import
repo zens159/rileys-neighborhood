@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://boocmjiqjugdu"
+path="res://.godot/imported/elliot_talk.dialogue-7e8da76a0d2aa5719d4ca3b7743a265a.tres"
+
+[deps]
+
+source_file="res://dialogue/elliot_talk.dialogue"
+dest_files=["res://.godot/imported/elliot_talk.dialogue-7e8da76a0d2aa5719d4ca3b7743a265a.tres"]
+
+[params]
+
+defaults=true

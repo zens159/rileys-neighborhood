@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bif0cfhgs4dnl" path="res://3d rooms/3d_room_test.gd" id="1_my508"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_netps"]
+[ext_resource type="Script" uid="uid://d3innl4tubmuo" path="res://dialogue_trigger_area.gd" id="3_2gufk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_netps"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -45,6 +46,9 @@ tags = {
 }
 loop = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qnbew"]
+size = Vector3(48.63513, 19.012756, 3.4199219)
+
 [node name="3dRoomTest" type="Node3D" unique_id=1697210721]
 script = ExtResource("1_my508")
 
@@ -79,7 +83,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049999714, -0.3, 0)
 use_collision = true
 size = Vector3(10.6, 0.4, 14.900001)
 
-[node name="ProtoController" parent="." unique_id=1774580177 instance=ExtResource("1_netps")]
+[node name="ProtoController" parent="." unique_id=1774580177 groups=["player"] instance=ExtResource("1_netps")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.924386)
 can_move = false
 input_left = "left"
@@ -230,3 +234,14 @@ size = Vector3(11.7, 15.5, 6.2000003)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=341854552]
 stream = SubResource("AudioStreamOggVorbis_0qgca")
 autoplay = true
+
+[node name="Area3D" type="Area3D" parent="." unique_id=434440506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -205.11284)
+script = ExtResource("3_2gufk")
+dialogue_title = "final"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1940765645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9195328, 0.42141724, -1.2099609)
+shape = SubResource("BoxShape3D_qnbew")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

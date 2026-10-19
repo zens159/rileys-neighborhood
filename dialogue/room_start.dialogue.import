@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://yeaw1x1a5eq5"
+path="res://.godot/imported/room_start.dialogue-2abd497f2c68b0e3cfeb005f4bae8637.tres"
+
+[deps]
+
+source_file="res://dialogue/room_start.dialogue"
+dest_files=["res://.godot/imported/room_start.dialogue-2abd497f2c68b0e3cfeb005f4bae8637.tres"]
+
+[params]
+
+defaults=true

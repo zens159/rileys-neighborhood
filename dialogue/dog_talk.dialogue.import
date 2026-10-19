@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://3cv0co3xvpee"
+path="res://.godot/imported/dog_talk.dialogue-40ba23624a1c71359c317374cba7784a.tres"
+
+[deps]
+
+source_file="res://dialogue/dog_talk.dialogue"
+dest_files=["res://.godot/imported/dog_talk.dialogue-40ba23624a1c71359c317374cba7784a.tres"]
+
+[params]
+
+defaults=true

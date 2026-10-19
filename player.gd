@@ -12,7 +12,19 @@ var save_scale : Vector2
 var save_facing_right = true # for wall jumps
 var control_stasis = false
 
+var can_float = false
+
 var float_stasis = false
+var dialogue_stasis = false
+
+var has_cat = false
+var helped_mark = false
+var helped_nick = false
+var helped_dog = false
+var helped_august = false
+
+var interactable_npc = false
+
 
 
 var gravity = 650.0
@@ -33,24 +45,43 @@ func _physics_process(delta) -> void:
 	
 	#print(current_state)
 	
-	match current_state:
-		State.IDLE:
-			_handle_idle_state(delta)
-		State.RUN:
-			_handle_movement_state(delta)
-		State.JUMP, State.FALL, State.WALLSLIDE:
-			_handle_air_state(delta)
-	
-	if Input.is_action_just_pressed("jump"):
-		_try_jump()
+	if not dialogue_stasis:
+		match current_state:
+			State.IDLE:
+				_handle_idle_state(delta)
+			State.RUN:
+				_handle_movement_state(delta)
+			State.JUMP, State.FALL, State.WALLSLIDE:
+				_handle_air_state(delta)
 		
-	_handle_movement_state(delta)
-	
-	# Smoothly return to normal shape after a jump (meant to be sprite.scale)
-	scale.x = lerp(scale.x, save_scale.x, 10 * delta)
-	scale.y = lerp(scale.y, save_scale.y, 10 * delta)
-	
-	move_and_slide()
+		if Input.is_action_just_pressed("jump"):
+			_try_jump()
+			
+		_handle_movement_state(delta)
+		
+		if interactable_npc and not dialogue_stasis:
+			if Input.is_action_just_pressed("interact"):
+				if interactable_npc.name == "Cat":
+					has_cat = true
+					interactable_npc.queue_free()
+				if interactable_npc.name == "Nick":
+					helped_nick = true
+				if interactable_npc.name == "Mark":
+					helped_mark = true
+				if interactable_npc.name == "Dog":
+					helped_dog = true
+				if interactable_npc.name == "August":
+					pass
+					#helped_august = true
+				DialogueManager.show_dialogue_balloon(interactable_npc.DIALOGUE_LIST[interactable_npc.dialogue_title], interactable_npc.dialogue_title)
+		
+		# Smoothly return to normal shape after a jump (meant to be sprite.scale)
+		scale.x = lerp(scale.x, save_scale.x, 10 * delta)
+		scale.y = lerp(scale.y, save_scale.y, 10 * delta)
+		
+		move_and_slide()
+	else:
+		_handle_idle_state(delta)
 
 func _handle_movement_state(delta: float) -> void:
 	var direction = Input.get_axis("left", "right")

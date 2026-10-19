@@ -1,0 +1,38 @@
+~ final
+[???]: Riley… It’s like you haven’t aged a bit…
+[Riley]: Who are you?
+[???]: I’m the one who taught you to wall jump when you were just a kid…
+[Riley]: There’s no way… You just taught me how to wall jump today!
+[Elliot]: Your father put you in a simulated time loop to protect you…
+[Elliot]: It’s been roughly 60 years since you disappeared and the world got destroyed to be like this.
+[Riley]: So you’re saying I’ve been living the same day over and over again?
+[Riley]: And it was what this place was before it looked like… this.
+[Elliot]: Yeah, it was your father’s recreation of his childhood.
+[Riley]: And you’re so old now!
+[Elliot]: I don’t have much time left.
+[Riley]: I didn’t even know my father… why did he do this?
+[Riley]: And he left me to be unfamiliar with the actual reality so that I could be happy?
+[Elliot]: He wanted to give you a proper childhood, something every child should have.
+[Riley]: And all the people too…
+if GameManager.player.helped_mark:
+	[Elliot]: Nick never managed to propose to August before he died.
+	[Elliot]: You could tell he was madly in love with her, but he just didn’t have the time left to do anything about it. 
+if GameManager.player.helped_nick:
+	[Elliot]: Mark never changed, even till the day he died.
+	[Elliot]: He was still being his lazy self, and unfortunately, to his detriment, he wasn't wary of the oncoming crisis.
+if GameManager.player.helped_dog:
+	[Elliot]: I miss the animals that would play in the park and forest around us. 
+	[Elliot]: But due to the crisis, we figured it would be easier to let them go beyond this place to a safer place.
+if GameManager.player.helped_august:
+	[Elliot]: August really cared about you and treated you as if you were her child.
+	[Elliot]: She helped build the reality that you lived in, so if she were still her, I would thank her.
+	[Riley]: But was it really worth me not knowing anything about anything?
+	[Elliot]: In your father’s mind and her mind, developing the technology to let you grow up was worth it.
+	[Riley]: Oh.
+	[Elliot]: She had to suffer a pretty difficult childhood until moving here and working as the bell ringer.
+	[Elliot]: I’m afraid we may never hear the bell ring again.
+[Elliot]: Life will never be the same.
+[Elliot]: For the time being, though, you can stay with me.
+[Elliot]: But you are the one with the power to restart the simulation anyways.
+[Elliot]: It’s your choice.
+=> END

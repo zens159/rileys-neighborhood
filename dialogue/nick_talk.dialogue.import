@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://56dn6c1oa6r2"
+path="res://.godot/imported/nick_talk.dialogue-aceb037a6cd169f86990efc4c36c4dbe.tres"
+
+[deps]
+
+source_file="res://dialogue/nick_talk.dialogue"
+dest_files=["res://.godot/imported/nick_talk.dialogue-aceb037a6cd169f86990efc4c36c4dbe.tres"]
+
+[params]
+
+defaults=true

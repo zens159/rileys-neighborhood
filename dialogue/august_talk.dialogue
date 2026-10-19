@@ -1,0 +1,21 @@
+~ august_talk
+if GameManager.player.helped_nick:
+	[August]: Hey Riley!
+	[August]: I saw you helping my beloved earlier!
+	[Riley]: Yeah, he looked really stressed over it.
+	[August]: Thank you for helping him!
+	[Riley]: It’s really no worries.
+	[August]: You know what, I have a present for you!
+	[Riley]: Really, it was no problem! You don’t have to!
+	[August]: Well, it’s this umbrella.
+	[August]: I bought it for a rainy day, but you made me realize something!
+	[August]: When I’m with my beloved, whether it’s rainy or not, I’ll always feel warm and fuzzy!
+	[August]: And then I wouldn’t even notice the rain!
+	[Riley]: If you say so...
+	[Riley]: What if I tried using the (Umbrella) to pull a Mary Poppins and float down?
+	$> GameManager.player.can_float = true
+else:
+	[August]: I really wish I was on my lunch break…
+	[August]: I miss him a lot...
+	[Riley]: Maybe I should leave her alone.
+=> END

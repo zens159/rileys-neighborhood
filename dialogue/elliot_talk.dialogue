@@ -1,0 +1,15 @@
+~ elliot_talk
+if GameManager.player.has_cat:
+	[Elliot]: Thank you so much, Riley!
+	[Riley]: No problem!
+	[Elliot]: Are you heading into town?
+	[Riley]: Yeah, how did you know?
+	[Elliot]: Well, there’s nothing else around here that you would want to go to.
+	[Riley]: I guess he’s right.
+	[Elliot]: Yeah, everything else is past the cliffs, but they got rid of the budget to bring people over there.
+	[Riley]: That’s a shame. Really wish we could explore more of this world.
+	[Elliot]: Oh shoot! I got so distracted by Catty that I was supposed to be doing my homework! I’ll see you around, Riley!
+	[Riley]: Is there something beyond this town? I’ve only ever known the people of the town, so I wonder who I would meet if I went afar.
+else:
+	[Elliot]: Wait, so for a right triangle, A squared plus B squared equals what again?
+=> END

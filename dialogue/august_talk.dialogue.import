@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://t6r8ry5hjfj6"
+path="res://.godot/imported/august_talk.dialogue-38a37150e75825f5585f2125d04f06ed.tres"
+
+[deps]
+
+source_file="res://dialogue/august_talk.dialogue"
+dest_files=["res://.godot/imported/august_talk.dialogue-38a37150e75825f5585f2125d04f06ed.tres"]
+
+[params]
+
+defaults=true
